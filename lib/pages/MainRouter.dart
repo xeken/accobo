@@ -26,56 +26,67 @@ class MainRouter extends StatefulWidget{
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoTabScaffold(
-      tabBar:  CupertinoTabBar(items: [
-        BottomNavigationBarItem(
-          icon: Icon(CupertinoIcons.home),
+    return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () { },
+        tooltip: 'Increment',
+        child: Icon(Icons.add),
+        elevation: 2.0,
+    ),
+      bottomNavigationBar: CupertinoTabBar(items:[
+            BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.home),
           title: Text("Calendar")),
-        BottomNavigationBarItem(
+            BottomNavigationBarItem(
           icon: Icon(CupertinoIcons.search),
           title: Text("Detail")),
-        BottomNavigationBarItem(
+            BottomNavigationBarItem(
           icon: Icon(CupertinoIcons.add),
-          title: Text("Add")),
-      ]),
-      tabBuilder: (context, index){
-        switch(index){
-          case 0:
-            return Calendar();
-            break;
-          case 1:
-            return DetailView();
-            break;
-          case 2:
-            return AddItem();
-            break;
-          default:
-            return Calendar();
-            break;
-        }
-        return Floating();
-      },
-    );
-  }
-
-    
+          title: Text("Add"))
+      ])
+        
+      );
+      // bottomNavigationBar: CupertinoTabBar(items:[
+      //    BottomNavigationBarItem(
+      //     icon: Icon(CupertinoIcons.home),
+      //     title: Text("Calendar")),
+      //   BottomNavigationBarItem(
+      //     icon: Icon(CupertinoIcons.search),
+      //     title: Text("Detail")),
+      //   BottomNavigationBarItem(
+      //     icon: Icon(CupertinoIcons.add),
+      //     title: Text("Add"))
+      // ]),
+      
+    // return CupertinoTabScaffold(
+    //   tabBar:  CupertinoTabBar(items: [
+    //     BottomNavigationBarItem(
+    //       icon: Icon(CupertinoIcons.home),
+    //       title: Text("Calendar")),
+    //     BottomNavigationBarItem(
+    //       icon: Icon(CupertinoIcons.search),
+    //       title: Text("Detail")),
+    //     BottomNavigationBarItem(
+    //       icon: Icon(CupertinoIcons.add),
+    //       title: Text("Add")),
+    //   ]),
+    //   tabBuilder: (context, index){
+    //     switch(index){
+    //       case 0:
+    //         return Calendar();
+    //         break;
+    //       case 1:
+    //         return DetailView();
+    //         break;
+    //       case 2:
+    //         return AddItem();
+    //         break;
+    //       default:
+    //         return Calendar();
+    //         break;
+    //     }
+    //   },
+    // );
+  } 
 }
-
-class Floating extends StatelessWidget {
-  const Floating({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: (){}, 
-        label: null,
-        icon: Icon(CupertinoIcons.add),
-        )
-    );
-  }
-}
-
