@@ -7,15 +7,13 @@ class Calendar extends StatelessWidget{
       
       child: Center(
         child: Text("Hello"),  
-         ),
-         navigationBar: CupertinoNavigationBar(
-           leading: Icon(CupertinoIcons.back),
-           middle: Text("Cupertino"),
-           trailing: Icon(CupertinoIcons.search),
-           ),
-          
-          backgroundColor: CupertinoColors.white,
-
+      ),
+        //  navigationBar: CupertinoNavigationBar(
+        //    leading: Icon(CupertinoIcons.back),
+        //    middle: Text("Cupertino"),
+        //    trailing: Icon(CupertinoIcons.search),
+        //    ),
+      backgroundColor: CupertinoColors.white,
     );
   }
 }
