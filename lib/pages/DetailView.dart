@@ -7,7 +7,7 @@ class DetailView extends StatelessWidget{
     return CupertinoPageScaffold(
       
       child: Center(
-        child: Text("Hello"),  
+        child: Text("asddsasad"),  
       ),
       backgroundColor: CupertinoColors.white,
     );

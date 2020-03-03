@@ -1,7 +1,10 @@
+import 'package:accobo/pages/AddItem.dart';
 import 'package:accobo/pages/Calendar.dart';
 import 'package:accobo/pages/DetailView.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -43,17 +46,19 @@ class _MainState extends State<Main> {
   Widget build(BuildContext context) {
     return Scaffold(
       
-      body: Container(
-        child: _pages.elementAt(_selectedIndex)
+      body: CupertinoPageScaffold(
+        child: _pages.elementAt(_selectedIndex),
+        navigationBar: CupertinoNavigationBar(
+         leading: Icon(CupertinoIcons.back),
+         middle: Text("Cupertino"),
+         trailing: Icon(CupertinoIcons.search),
+        ),
       ),
-        // body: CupertinoPageScaffold(
-        //   child: _pages.elementAt(_selectedIndex),
-        //   navigationBar: CupertinoNavigationBar(
-        //    leading: Icon(CupertinoIcons.back),
-        //    middle: Text("Cupertino"),
-        //    trailing: Icon(CupertinoIcons.search),
-        //    ),
-        // ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: CupertinoColors.activeBlue,
+          onPressed: null,
+          child: Icon(CupertinoIcons.pencil),
+        ),
       bottomNavigationBar: CupertinoTabBar(
         onTap: _onItemTapped,
         currentIndex: _selectedIndex,
