@@ -56,7 +56,7 @@ class _MainState extends State<Main> {
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: CupertinoColors.activeBlue,
-          onPressed: null,
+          onPressed:() => Navigator.push(context, CupertinoPageRoute(builder: (context) => AddItem())),
           child: Icon(CupertinoIcons.pencil),
         ),
       bottomNavigationBar: CupertinoTabBar(
