@@ -1,15 +1,13 @@
-
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
-class AddItem extends StatelessWidget{
+class MainRoute extends StatelessWidget{
+
   Widget build(BuildContext context){
     return CupertinoPageScaffold(
       child: Center(
-        child: Text("QQQQQQQasad"),  
+        child: Text("Main"),  
       ),
       backgroundColor: CupertinoColors.white,
     );
   }
-
 }

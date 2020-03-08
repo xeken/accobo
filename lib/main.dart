@@ -1,6 +1,7 @@
-import 'package:accobo/pages/AddItem.dart';
-import 'package:accobo/pages/Calendar.dart';
-import 'package:accobo/pages/DetailView.dart';
+import 'package:accobo/pages/AddItemRoute.dart';
+import 'package:accobo/pages/CalendarRoute.dart';
+import 'package:accobo/pages/HistoryRoute.dart';
+import 'package:accobo/pages/MainRoute.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -31,8 +32,9 @@ class _MainState extends State<Main> {
     super.initState();
 
     _pages = <Widget>[
-      DetailView(),
-      Calendar()
+      MainRoute(),
+      CalendarRoute(),
+      HistorytRoute()
     ];
   }
 
@@ -45,13 +47,11 @@ class _MainState extends State<Main> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: CupertinoPageScaffold(
         child: _pages.elementAt(_selectedIndex),
         navigationBar: CupertinoNavigationBar(
          leading: Icon(CupertinoIcons.back),
-         middle: Text("Cupertino"),
-         trailing: Icon(CupertinoIcons.search),
+         middle: Text("Accobo"),
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -65,11 +65,15 @@ class _MainState extends State<Main> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.home),
-            title: Text('')
+            title: Text('Main')
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.clock),
+            title: Text('Calendar')
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.collections),
-            title: Text('')
+            title: Text('History')
           )
         ],
       ),
