@@ -1,3 +1,4 @@
+import 'package:accobo/models/AccoboItem.dart';
 import 'package:flutter/cupertino.dart';
 
 class AddItem extends StatefulWidget{
@@ -7,19 +8,32 @@ class AddItem extends StatefulWidget{
 }
 
 class _AddItemState extends State<AddItem> {
-  TextEditingController _textController;
+
+  AccoboItem accoboItem;
 
   @override
   void initState() {
     super.initState();
-    _textController = TextEditingController(text: 'initial text');
+  
   }
 
   Widget build(BuildContext context){
     return CupertinoPageScaffold(
-      child: Center(
-        //child: Text("AddItem"),  
-        child: CupertinoTextField(controller: _textController),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          children: <Widget>[
+            CupertinoTextField(
+              autofocus: true,
+              placeholder: "제목",
+              padding: const EdgeInsets.only(bottom: 8),
+              //onSubmitted: accoboItem.,
+            ),
+            CupertinoTextField(
+              placeholder: "제목",
+            ),
+          ],
+        ),
       ),
       backgroundColor: CupertinoColors.white,
     );
