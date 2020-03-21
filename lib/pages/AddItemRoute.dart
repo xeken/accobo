@@ -1,5 +1,6 @@
 import 'package:accobo/models/AccoboItem.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class AddItem extends StatefulWidget{
 
@@ -19,16 +20,17 @@ class _AddItemState extends State<AddItem> {
 
   Widget build(BuildContext context){
     return CupertinoPageScaffold(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
+      child: Container(
+        margin: const EdgeInsets.all(32),
+        padding: const EdgeInsets.only(top: 32),
         child: Column(
           children: <Widget>[
+
             CupertinoTextField(
-              autofocus: true,
               placeholder: "제목",
-              padding: const EdgeInsets.only(bottom: 8),
               //onSubmitted: accoboItem.,
             ),
+            Padding(padding: const EdgeInsets.all(16)),
             CupertinoTextField(
               placeholder: "제목",
             ),
